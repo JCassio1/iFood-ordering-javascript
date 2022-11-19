@@ -5,7 +5,6 @@ import { CAROUSEL_SLIDER_TIME } from '../../Configuration/config'
 import meal1 from '../../assets/hero-image-size.png'
 import meal2 from '../../assets/hero-image-size-2.png'
 import meal3 from '../../assets/hero-image-size-3.png'
-import { CarouselItem } from 'react-bootstrap'
 
 function Hero(props) {
   return (
