@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 const ReactButton = (props) => {
   return (
     <Fragment>
-      <Button>{props.buttonText}</Button>
+      <Button variant={props.buttonVariant}>{props.buttonText}</Button>
     </Fragment>
   )
 }

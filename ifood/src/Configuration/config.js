@@ -1,0 +1,1 @@
+export const CAROUSEL_SLIDER_TIME = 3000
