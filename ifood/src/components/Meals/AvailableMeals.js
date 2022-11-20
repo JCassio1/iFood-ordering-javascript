@@ -49,7 +49,7 @@ const AvailableMeals = () => {
   const listOfMeals = DUMMY_MEALS.map(generateCard)
   return (
     <section className='bg-light pb-4'>
-      <div className={`row px-4 ${styles.spaceItemsEvenly}`}>{listOfMeals}</div>
+      <div className={`${styles.spaceItemsEvenly}`}>{listOfMeals}</div>
     </section>
   )
 }
