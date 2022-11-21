@@ -24,7 +24,7 @@ const stockImages = [
   }
 ]
 
-const Header = (props) => {
+const Header = () => {
   return (
     <Fragment>
       <Fragment>
