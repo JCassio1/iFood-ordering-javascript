@@ -38,9 +38,10 @@ const DUMMY_MEALS = [
 
 const AvailableMeals = () => {
   const generateCard = (meal) => {
+    const price = parseFloat(meal.price.toFixed(2))
     return (
       <Col sm={6} md={3} lg={3} key={meal.id}>
-        <UICard title={meal.name} description={meal.description} buttonText={meal.price} imagePath={meal.imagePath} />
+        <UICard title={meal.name} description={meal.description} buttonText={price} imagePath={meal.imagePath} />
       </Col>
     )
   }
