@@ -4,7 +4,7 @@ import styles from './UICard.module.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { PlusSquareFill, DashSquareFill } from 'react-bootstrap-icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MAX_ORDERS_PER_PRODUCT } from '../../Configuration/config'
 
 const UICard = (props) => {
@@ -20,6 +20,11 @@ const UICard = (props) => {
       setQuantity(quantity - 1)
     }
   }
+
+  useEffect(() => {
+    const newQuantity = (parseFloat(props.buttonText) * quantity).toFixed(2)
+    setPrice(newQuantity)
+  }, [quantity])
 
   return (
     <Card className={styles.card}>
