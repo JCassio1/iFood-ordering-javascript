@@ -1,5 +1,8 @@
 import UICard from '../UI/UICard'
 import styles from './AvailableMeals.module.css'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const DUMMY_MEALS = [
   {
@@ -37,19 +40,17 @@ const DUMMY_MEALS = [
 const AvailableMeals = () => {
   const generateCard = (meal) => {
     return (
-      <UICard
-        key={meal.id}
-        title={meal.name}
-        description={meal.description}
-        buttonText={meal.price}
-        imagePath={meal.imagePath}
-      />
+      <Col sm={6} md={3} lg={3} key={meal.id}>
+        <UICard title={meal.name} description={meal.description} buttonText={meal.price} imagePath={meal.imagePath} />
+      </Col>
     )
   }
   const listOfMeals = DUMMY_MEALS.map(generateCard)
   return (
-    <section className='bg-light pb-4'>
-      <div className={`${styles.spaceItemsEvenly}`}>{listOfMeals}</div>
+    <section className='pb-4'>
+      <Container>
+        <Row className='gy-3 my-3'>{listOfMeals}</Row>
+      </Container>
     </section>
   )
 }
