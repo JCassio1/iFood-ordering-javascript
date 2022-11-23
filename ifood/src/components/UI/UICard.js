@@ -4,26 +4,25 @@ import styles from './UICard.module.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { PlusSquareFill, DashSquareFill } from 'react-bootstrap-icons'
-import { useEffect, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { MAX_ORDERS_PER_PRODUCT } from '../../Configuration/config'
 
 const UICard = (props) => {
   const [quantity, setQuantity] = useState(1)
-  const [price, setPrice] = useState(props.buttonText)
+
   const increaseQty = () => {
     if (quantity < MAX_ORDERS_PER_PRODUCT) {
-      setQuantity(quantity + 1)
+      setQuantity((prev) => prev + 1)
     }
   }
   const decreaseQty = () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1)
+      setQuantity((prev) => prev - 1)
     }
   }
 
-  useEffect(() => {
-    const newQuantity = (parseFloat(props.buttonText) * quantity).toFixed(2)
-    setPrice(newQuantity)
+  const price = useMemo(() => {
+    return parseFloat(props.buttonText * quantity).toFixed(2)
   }, [quantity])
 
   return (
