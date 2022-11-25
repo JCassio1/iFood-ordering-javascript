@@ -22,8 +22,8 @@ const UICard = (props) => {
   }
 
   const price = useMemo(() => {
-    return parseFloat(props.buttonText * quantity).toFixed(2)
-  }, [quantity])
+    return parseFloat(props.addToCartButtonText * quantity).toFixed(2)
+  }, [quantity, props.addToCartButtonText])
 
   return (
     <Card className={styles.card}>
