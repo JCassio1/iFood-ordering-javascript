@@ -7,7 +7,7 @@ import styles from './CartButton.module.css'
 const CartButton = (props) => {
   return (
     <Fragment>
-      <Button className={styles.alignElements} variant={props.buttonVariant}>
+      <Button className={styles.alignElements} variant={props.buttonVariant} onClick={props.onClick}>
         <span className={styles.addSpace}>
           <CartFill color='black' width={16} height={17} />
         </span>

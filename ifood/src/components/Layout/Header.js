@@ -24,7 +24,7 @@ const stockImages = [
   }
 ]
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <Fragment>
@@ -35,7 +35,7 @@ const Header = () => {
               <Nav.Link href='#home'>Home</Nav.Link>
             </Nav>
             <Navbar.Collapse className='justify-content-end'>
-              <CartButton buttonVariant='light' buttonText='Cart' numOfItems='1' />
+              <CartButton buttonVariant='light' buttonText='Cart' numOfItems='1' onClick={props.onShowCart} />
             </Navbar.Collapse>
           </Container>
         </Navbar>
