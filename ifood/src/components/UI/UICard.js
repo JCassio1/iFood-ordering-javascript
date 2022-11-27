@@ -33,7 +33,7 @@ const UICard = (props) => {
         <Card.Text className='text-center'>{props.description}</Card.Text>
         <Row className='mt-auto pb-3'>
           <Col className='d-flex justify-content-center'>
-            <PlusSquareFill onClick={increaseQty} />
+            <PlusSquareFill ç={increaseQty} />
           </Col>
           <Col className='d-flex justify-content-center'>{quantity}</Col>
           <Col className='d-flex justify-content-center'>

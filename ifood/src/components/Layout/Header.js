@@ -1,10 +1,11 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import CartButton from '../Cart/CartButton'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Hero from './Hero'
+import CartContext from '../../Store/CartContext'
 
 const stockImages = [
   {
@@ -25,6 +26,11 @@ const stockImages = [
 ]
 
 const Header = (props) => {
+  const cartCtx = useContext(CartContext)
+  const cartItemsNumber = cartCtx.items.reduce((currentNumber, item) => {
+    return currentNumber + item.amount
+  }, 0)
+
   return (
     <Fragment>
       <Fragment>
@@ -35,7 +41,12 @@ const Header = (props) => {
               <Nav.Link href='#home'>Home</Nav.Link>
             </Nav>
             <Navbar.Collapse className='justify-content-end'>
-              <CartButton buttonVariant='light' buttonText='Cart' numOfItems='1' onClick={props.onShowCart} />
+              <CartButton
+                buttonVariant='light'
+                buttonText='Cart'
+                numOfItems={cartItemsNumber}
+                onClick={props.onShowCart}
+              />
             </Navbar.Collapse>
           </Container>
         </Navbar>
