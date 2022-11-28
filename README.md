@@ -1,5 +1,10 @@
 <h1 align='center'>🌭 iFood ordering App 🍔</h1>
 
+<p align="center">
+  <img src="ifood/projectAssets/demoGif.gif" />
+  Project is in progress...
+</p>
+
 ## 📓 Description
 
 iFood ordering app is a react based project that allows users to select their favorite dishes and simulate a purchase through real actions such as selecting quantity, adding/removing from cart and complete checkout.
@@ -22,7 +27,7 @@ iFood ordering app is a react based project that allows users to select their fa
 ## 🖌️ Wireframe
 
 <p align="center">
-  <img src="assets/App-wireframe.png" />
+  <img src="ifood/projectAssets/Wireframe.png" />
 </p>
 
 ## 🚀 Tech
@@ -61,11 +66,13 @@ As a user, I want to view a catalogue of meals that I can choose from, add them 
 4. Create cart functionality to allow users to add and remove from cart
 5. Allow users to complete checkout with a payment gateway
 
-## 🗺 Process flowchart
+## 🗺 Project management
 
 <p align="center">
-  <img src="assets/countrify-flowchart.png" />
+  <img src="assets/iFood-flowchart.png" />
 </p>
+
+I use ClickUp to manage implementation of project features (Kanban)
 
 
 ## 🏛 Role in continuous development
