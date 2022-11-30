@@ -21,6 +21,10 @@ const UICard = (props) => {
     }
   }
 
+  const addToCart = () => {
+    props.onAddToCart(quantity)
+  }
+
   const price = useMemo(() => {
     return parseFloat(props.addToCartButtonText * quantity).toFixed(2)
   }, [quantity, props.addToCartButtonText])
@@ -40,7 +44,7 @@ const UICard = (props) => {
             <DashSquareFill onClick={decreaseQty} />
           </Col>
         </Row>
-        <Button variant='dark' className='mt-auto'>
+        <Button variant='dark' className='mt-auto' onClick={addToCart}>
           £ {price} • Add
         </Button>
       </Card.Body>

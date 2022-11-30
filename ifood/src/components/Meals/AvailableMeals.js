@@ -2,6 +2,8 @@ import UICard from '../UI/UICard'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { useContext } from 'react'
+import CartContext from '../../Store/CartContext'
 
 const DUMMY_MEALS = [
   {
@@ -37,19 +39,33 @@ const DUMMY_MEALS = [
 ]
 
 const AvailableMeals = () => {
+  const cartCtx = useContext(CartContext)
   const generateCard = (meal) => {
     const price = parseFloat(meal.price.toFixed(2))
+
+    const onAddToCartHandler = (amount) => {
+      cartCtx.addItem({
+        id: meal.id,
+        name: meal.name,
+        amount: amount,
+        price: price
+      })
+    }
+
     return (
       <Col sm={6} md={3} lg={3} key={meal.id}>
         <UICard
+          id={meal.id}
           title={meal.name}
           description={meal.description}
           addToCartButtonText={price}
           imagePath={meal.imagePath}
+          onAddToCart={onAddToCartHandler}
         />
       </Col>
     )
   }
+
   const listOfMeals = DUMMY_MEALS.map(generateCard)
   return (
     <section className='pb-4'>
