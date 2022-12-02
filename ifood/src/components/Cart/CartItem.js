@@ -23,11 +23,11 @@ const CartItem = (props) => {
               <Col size='6'>
                 <Row>
                   <Col>
-                    <PlusSquareFill />
+                    <PlusSquareFill onClick={props.onAdd} />
                   </Col>
                   <Col>{props.selectedQuantity}</Col>
                   <Col>
-                    <DashSquareFill />
+                    <DashSquareFill onClick={props.onRemove} />
                   </Col>
                 </Row>
               </Col>

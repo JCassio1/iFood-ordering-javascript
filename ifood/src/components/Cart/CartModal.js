@@ -12,6 +12,10 @@ const CartModal = (props) => {
 
   const hasItems = cartCtx.items.length > 0
 
+  const cartItemRemoveHandler = (id) => {}
+
+  const cartItemAddHandler = (item) => {}
+
   const cartItems = (
     <div>
       {cartCtx.items.map((item) => (
@@ -22,6 +26,8 @@ const CartModal = (props) => {
           productCurrency={SHOP_AVAILABLE_CURRENCIES.GBP}
           productPrice={item.price}
           selectedQuantity={item.amount}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          onAdd={cartItemAddHandler.bind(null, item)}
         />
       ))}
     </div>

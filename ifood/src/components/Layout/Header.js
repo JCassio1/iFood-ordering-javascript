@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Hero from './Hero'
 import CartContext from '../../Store/CartContext'
 
-const stockImages = [
+const heroStockImages = [
   {
     key: 1,
     title: 'Tasty and healthy',
@@ -51,7 +51,7 @@ const Header = (props) => {
           </Container>
         </Navbar>
       </Fragment>
-      <Hero ourStockImages={stockImages} />
+      <Hero ourStockImages={heroStockImages} />
     </Fragment>
   )
 }
