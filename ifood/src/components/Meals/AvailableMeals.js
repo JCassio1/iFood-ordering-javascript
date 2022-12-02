@@ -48,6 +48,7 @@ const AvailableMeals = () => {
         id: meal.id,
         name: meal.name,
         amount: amount,
+        imagePath: meal.imagePath,
         price: price
       })
     }
