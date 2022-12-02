@@ -34,7 +34,7 @@ const Header = (props) => {
   return (
     <Fragment>
       <Fragment>
-        <Navbar bg='dark' variant='dark'>
+        <Navbar bg='dark' variant='dark' sticky='top'>
           <Container>
             <Navbar.Brand href='#home'>iFood</Navbar.Brand>
             <Nav className='me-auto'>
