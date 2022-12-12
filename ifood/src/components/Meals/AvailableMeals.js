@@ -14,7 +14,7 @@ const AvailableMeals = () => {
     getMeals().then((result) => {
       setMeals(result)
     })
-  }, [])
+  })
 
   const cartCtx = useContext(CartContext)
 
