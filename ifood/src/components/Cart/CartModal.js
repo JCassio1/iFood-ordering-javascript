@@ -50,9 +50,7 @@ const CartModal = (props) => {
           <span>
             <strong>Total Amount: {totalAmount}</strong>
           </span>
-          {hasItems && (
-            <UIButton colorVariant='dark' size='lg' classAtributes='mt-auto' buttonText='Proceed to checkout' />
-          )}
+          {hasItems && <UIButton colorVariant='dark' size='lg' classAtributes='mt-auto' buttonText='STRIPE SOON :)' />}
         </div>
       </Offcanvas>
     </div>
