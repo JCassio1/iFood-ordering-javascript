@@ -3,9 +3,9 @@ import statusCode from '../statusCode'
 
 const useContentful = () => {
   const client = createClient({
-    space: '', // API KEY HERE (Do not hard code)
-    accessToken: '', // API KEY HERE (Do not hard code)
-    host: '' // API KEY HERE (DO not hard code)
+    space: process.env.REACT_APP_SPACE,
+    accessToken: process.env.REACT_APP_ACCESS_TOKEN,
+    host: process.env.REACT_APP_HOST
   })
 
   const getMeals = async () => {
@@ -24,7 +24,7 @@ const useContentful = () => {
       })
       return sanitizeEntries
     } catch (error) {
-      console.log(`${statusCode.API_ERROR}: ${error}`)
+      console.log(`${statusCode.SERVER_ERROR}: ${error}`)
     }
   }
   return { getMeals }
