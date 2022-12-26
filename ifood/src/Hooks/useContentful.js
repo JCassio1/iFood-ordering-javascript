@@ -27,7 +27,29 @@ const useContentful = () => {
       console.log(`${statusCode.SERVER_ERROR}: ${error}`)
     }
   }
-  return { getMeals }
+
+  const getCategories = async () => {
+    try {
+      const entries = await client.getEntries({
+        content_type: 'category',
+        select: 'fields'
+      })
+
+      const sanitizeEntries = entries.items.map((item) => {
+        const categoryImage = item.fields.image.fields.file.url
+        return {
+          ...item.fields,
+          categoryImage
+        }
+      })
+
+      return sanitizeEntries
+    } catch (error) {
+      console.log(`${statusCode.SERVER_ERROR}: ${error}`)
+    }
+  }
+
+  return { getMeals, getCategories }
 }
 
 export default useContentful

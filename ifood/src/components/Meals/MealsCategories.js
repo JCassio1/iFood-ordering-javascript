@@ -1,37 +1,36 @@
 import React from 'react'
 import UICardImageWithText from '../UI/UICardImageWithText'
 import styles from './MealsCategories.module.css'
+import useContentful from '../../Hooks/useContentful'
+import { useState, useEffect } from 'react'
 
 const MealsCategories = () => {
+  const [categories, setCategories] = useState([])
+  const { getCategories } = useContentful()
+
+  useEffect(() => {
+    getCategories().then((result) => {
+      setCategories(result)
+      console.log('calling')
+    })
+  }, []) // If you remove empty array. It will create a bug
+
+  const generateCard = (category, index) => {
+    return (
+      <UICardImageWithText
+        key={index}
+        description={category.description}
+        imageUrl={category.categoryImage}
+        imageAlt={category.description}
+      />
+    )
+  }
+
+  const allCategories = categories.map(generateCard)
+
   return (
     <section>
-      <div className={`pt-5 px-4 ${styles.horizontalrow}`}>
-        <UICardImageWithText
-          description='Asian'
-          imageUrl='https://www.allaboutsushiguide.com/images/nigiri-sushi-250.jpg'
-          imageAlt='Asian'
-        />
-        <UICardImageWithText
-          description='Asian'
-          imageUrl='https://www.allaboutsushiguide.com/images/nigiri-sushi-250.jpg'
-          imageAlt='Asian'
-        />
-        <UICardImageWithText
-          description='Asian'
-          imageUrl='https://www.allaboutsushiguide.com/images/nigiri-sushi-250.jpg'
-          imageAlt='Asian'
-        />
-        <UICardImageWithText
-          description='Asian'
-          imageUrl='https://www.allaboutsushiguide.com/images/nigiri-sushi-250.jpg'
-          imageAlt='Asian'
-        />
-        <UICardImageWithText
-          description='Asian'
-          imageUrl='https://www.allaboutsushiguide.com/images/nigiri-sushi-250.jpg'
-          imageAlt='Asian'
-        />
-      </div>
+      <div className={`gy-3 pb-5 ${styles.horizontalrow}`}>{allCategories}</div>
     </section>
   )
 }
