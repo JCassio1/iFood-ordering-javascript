@@ -5,3 +5,4 @@ export const MAX_ORDERS_PER_PRODUCT = 20
 export const SHOP_AVAILABLE_CURRENCIES = {
   GBP: '£'
 }
+export const HOME_PAGE_URL = window.location.href

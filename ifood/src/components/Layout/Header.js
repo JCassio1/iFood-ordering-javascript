@@ -6,6 +6,7 @@ import CartButton from '../Cart/CartButton'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Hero from './Hero'
 import CartContext from '../../Store/CartContext'
+import { HOME_PAGE_URL } from '../../Configuration/config'
 
 const heroStockImages = [
   {
@@ -36,9 +37,9 @@ const Header = (props) => {
       <Fragment>
         <Navbar bg='dark' variant='dark' sticky='top'>
           <Container>
-            <Navbar.Brand href='#home'>iFood</Navbar.Brand>
+            <Navbar.Brand href={HOME_PAGE_URL}>iFood</Navbar.Brand>
             <Nav className='me-auto'>
-              <Nav.Link href='#home'>Home</Nav.Link>
+              <Nav.Link href={HOME_PAGE_URL}>Home</Nav.Link>
             </Nav>
             <Navbar.Collapse className='justify-content-end'>
               <CartButton
