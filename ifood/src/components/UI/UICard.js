@@ -9,6 +9,7 @@ import { MAX_ORDERS_PER_PRODUCT } from '../../Configuration/config'
 
 const UICard = (props) => {
   const [quantity, setQuantity] = useState(1)
+  const [addedToCart, setAddedToCart] = useState(false)
 
   const increaseQty = () => {
     if (quantity < MAX_ORDERS_PER_PRODUCT) {
@@ -23,11 +24,24 @@ const UICard = (props) => {
 
   const addToCart = () => {
     props.onAddToCart(quantity)
+    setAddedToCart(true)
+    resetCard()
+  }
+
+  const resetCard = () => {
+    setTimeout(() => {
+      setAddedToCart(false)
+      clearTimeout()
+    }, 4000)
+
+    setQuantity(1)
   }
 
   const price = useMemo(() => {
     return parseFloat(props.addToCartButtonText * quantity).toFixed(2)
   }, [quantity, props.addToCartButtonText])
+
+  const buttonText = addedToCart ? '✓ Added' : `£ ${price} • Add`
 
   return (
     <Card className={styles.card}>
@@ -44,8 +58,8 @@ const UICard = (props) => {
             <DashSquareFill onClick={decreaseQty} />
           </Col>
         </Row>
-        <Button variant='dark' className='mt-auto' onClick={addToCart}>
-          £ {price} • Add
+        <Button variant={addedToCart ? 'success' : 'dark'} className='mt-auto' onClick={addToCart}>
+          {buttonText}
         </Button>
       </Card.Body>
     </Card>
