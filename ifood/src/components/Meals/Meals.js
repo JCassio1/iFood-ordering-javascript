@@ -2,7 +2,7 @@ import MealsSummary from './MealsSummary'
 import AvailableMeals from './AvailableMeals'
 import { Fragment } from 'react'
 import MealsCategories from './MealsCategories'
-// import Carousel from '../carousel/Carousel'
+import Carousel from '../carousel/Carousel'
 
 const Meals = () => {
   return (
@@ -10,7 +10,7 @@ const Meals = () => {
       <MealsSummary />
       <MealsCategories />
       <AvailableMeals />
-      {/* <Carousel /> */}
+      <Carousel />
     </Fragment>
   )
 }
