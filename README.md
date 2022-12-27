@@ -2,7 +2,6 @@
 
 <p align="center">
   <img src="ifood/projectAssets/demoGif.gif" />
-  Project is in progress...
 </p>
 
 ## 📓 Description
@@ -13,7 +12,7 @@ iFood ordering app is a react based project that allows users to select their fa
 
   ```js
     const project = {
-      "status": "In Development"
+      "status": "Version 1.0.0 released"
     }
   ```
 ##
