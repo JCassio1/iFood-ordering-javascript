@@ -11,7 +11,6 @@ const MealsCategories = () => {
   useEffect(() => {
     getCategories().then((result) => {
       setCategories(result)
-      console.log('calling')
     })
   }, []) // If you remove empty array. It will create a bug
 

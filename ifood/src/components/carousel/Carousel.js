@@ -18,8 +18,8 @@ const marketingTerms = [
   'Burger'
 ]
 
-const termsArray = marketingTerms.map((term) => (
-  <div className={styles.slide}>
+const termsArray = marketingTerms.map((term, index) => (
+  <div className={styles.slide} key={index}>
     <h1>{term}</h1>
   </div>
 ))
