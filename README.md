@@ -1,5 +1,7 @@
 <h1 align='center'>🌭 iFood ordering App 🍔</h1>
 
+## 📹 Demo GIF 📼
+
 <p align="center">
   <img src="ifood/projectAssets/demoGif.gif" />
 </p>
