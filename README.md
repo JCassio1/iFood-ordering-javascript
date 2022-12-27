@@ -85,7 +85,7 @@ I use ClickUp to manage implementation of project features (Kanban)
 ## ☄️ Future Improvements
 
 1. Lazy loading
-2. Infinite Horizontal Autoplay smooth autoscrool Slider
-3. Account creation
+2. Account creation
+3. Apple PassKey for account creation without passwords
 
 Made with ❤️ by Joselson and sleepless nights
