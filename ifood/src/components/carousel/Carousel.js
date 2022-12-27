@@ -2,15 +2,20 @@ import styles from './Carousel.module.css'
 
 const marketingTerms = [
   'Delicious',
-  'I deserve',
   'Munchies',
   'Hungry',
   'Tasty',
   'Fantastic',
+  'I deserve it',
   'Soft',
   'Exotic',
   'Snack',
-  'Lunch'
+  'Lunch',
+  'Today',
+  'Want now',
+  'Spicy',
+  'Crisps',
+  'Burger'
 ]
 
 const termsArray = marketingTerms.map((term) => (
@@ -21,7 +26,7 @@ const termsArray = marketingTerms.map((term) => (
 
 const Carousel = () => {
   return (
-    <div className={styles.mainContainer}>
+    <div className={`${styles.mainContainer} pt-5`}>
       <div className={styles.slider}>
         <div className={styles.sliderTrack}>{termsArray}</div>
       </div>
