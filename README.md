@@ -3,7 +3,7 @@
 ## 📹 Demo GIF 📼
 
 <p align="center">
-  <img src="ifood/projectAssets/demoGif.gif" />
+  <img src="projectAssets/demoGif.gif" />
 </p>
 
 ## 📓 Description
@@ -28,7 +28,7 @@ iFood ordering app is a react based project that allows users to select their fa
 ## 🖌️ Wireframe
 
 <p align="center">
-  <img src="ifood/projectAssets/Wireframe.png" />
+  <img src="projectAssets/Wireframe.png" />
 </p>
 
 ## 🚀 Tech
