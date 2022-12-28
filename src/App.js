@@ -13,6 +13,9 @@ function App() {
   const showCartHandler = () => setShowCartModal(true)
 
   console.log(process.env.REACT_APP_NAME)
+  console.log(process.env.REACT_APP_SPACE)
+  console.log(process.env.REACT_APP_ACCESS_TOKEN)
+  console.log(console.env.REACT_APP_HOST)
 
   return (
     <CartProvider>
