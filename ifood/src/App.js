@@ -12,7 +12,7 @@ function App() {
   const hideCartHandler = () => setShowCartModal(false)
   const showCartHandler = () => setShowCartModal(true)
 
-  console.log(process.env.NAME)
+  console.log(process.env.REACT_APP_NAME)
 
   return (
     <CartProvider>
