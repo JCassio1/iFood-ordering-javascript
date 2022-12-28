@@ -12,7 +12,7 @@ const MealsCategories = () => {
     getCategories().then((result) => {
       setCategories(result)
     })
-  }, []) // If you remove empty array. It will create a bug
+  }, [getCategories]) // If you remove empty array. It will create a bug
 
   const generateCard = (category, index) => {
     return (
