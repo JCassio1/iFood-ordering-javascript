@@ -7,7 +7,6 @@ import CartContext from '../../Store/CartContext'
 import useContentful from '../../Hooks/useContentful'
 
 const AvailableMeals = () => {
-  console.log(process.env.NAME)
   const [meals, setMeals] = useState([])
   const { getMeals } = useContentful()
 
@@ -15,7 +14,7 @@ const AvailableMeals = () => {
     getMeals().then((result) => {
       setMeals(result)
     })
-  })
+  }, [getMeals])
 
   const cartCtx = useContext(CartContext)
 
