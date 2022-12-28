@@ -15,14 +15,13 @@ function App() {
   console.log(process.env.NAME)
 
   return (
-    <h1>HI</h1>
-    // <CartProvider>
-    //   <CartModal showStatus={showCartModal} dissmissHandler={hideCartHandler} />
-    //   <Header onShowCart={showCartHandler}></Header>
-    //   <main className={MAIN_BACKGROUND_COLOR}>
-    //     <Meals />
-    //   </main>
-    // </CartProvider>
+    <CartProvider>
+      <CartModal showStatus={showCartModal} dissmissHandler={hideCartHandler} />
+      <Header onShowCart={showCartHandler}></Header>
+      <main className={MAIN_BACKGROUND_COLOR}>
+        <Meals />
+      </main>
+    </CartProvider>
   )
 }
 
